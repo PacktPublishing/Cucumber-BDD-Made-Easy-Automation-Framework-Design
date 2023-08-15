@@ -1,0 +1,17 @@
+name: run unit tests of feature branches
+
+on: 
+  push:
+    branches: 
+      'feature/*
+
+jobs:
+  run-unit-test:
+    run-on: ubtuntu-latest
+
+    stess:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+
+      - name: run unit test
+        run: mvn test
